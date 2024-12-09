@@ -4,7 +4,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends pulseaudio s
 
 COPY ["DockerFiles/snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb", "snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb"]
 
-RUN apt-get install snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb
+RUN apt install -y ./snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb
 # COPY ["DockerFiles/pulseaudio.service", "/etc/systemd/system/pulseaudio.service"]
 # RUN systemctl enable pulseaudio
 
