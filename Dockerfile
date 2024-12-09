@@ -1,6 +1,6 @@
 FROM debian:bookworm AS base
 
-RUN apt-get update -y && apt-get install -y --no-install-recommends pulseaudio squeezelite-pulseaudio mpg123 && apt-get clean
+RUN apt-get update -y && apt-get install -y --no-install-recommends pulseaudio squeezelite-pulseaudio mpg123 wget && apt-get clean
 
 RUN wget https://github.com/badaix/snapcast/releases/download/v0.29.0/snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb
 
