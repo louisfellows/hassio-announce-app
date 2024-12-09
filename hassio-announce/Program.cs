@@ -22,6 +22,13 @@ app.UseHttpsRedirection();
 
 app.MapPost("/", async (PlayRequest playRequest) =>
 {
+    Console.WriteLine(playRequest.Uri);
+
+    if (string.IsNullOrEmpty(playRequest.Uri))
+    {
+        Console.WriteLine("No Uri Supplied");
+    }
+
     var result = await Cli.Wrap("mpg123").WithArguments(playRequest.Uri).ExecuteBufferedAsync();
 
     if (!result.IsSuccess)

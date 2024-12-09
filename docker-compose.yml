@@ -1,0 +1,9 @@
+
+version: '3.4'
+
+services:
+  hassioannounce:
+    image: hassioannounce
+    build:
+      context: .
+      dockerfile: Dockerfile
