@@ -1,4 +1,4 @@
-FROM debian/snapshot:latest AS base
+FROM debian:bookworm AS base
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends pulseaudio squeezelite-pulseaudio mpg123 && apt-get clean
 
@@ -11,6 +11,8 @@ RUN sudo apt install snapclient_0.29.0-1_amd64_bookworm_with-pulse.deb
 RUN pulseaudio
 RUN squeezelite-pulseaudio
 RUN snapclient
+
+
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-dotnet-configure-containers
